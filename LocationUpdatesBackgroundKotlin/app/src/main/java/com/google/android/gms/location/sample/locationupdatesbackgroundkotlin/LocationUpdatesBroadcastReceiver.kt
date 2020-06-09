@@ -60,6 +60,9 @@ class LocationUpdatesBroadcastReceiver : BroadcastReceiver() {
                     LocationRepository.getInstance(context, Executors.newSingleThreadExecutor())
                         .addLocations(locations)
                 }
+                var txtLat = locations[0].latitude
+                var txtLng = locations[0].longitude
+                Log.i(TAG, "lat:$txtLat, lng:$txtLng")
             }
         }
     }

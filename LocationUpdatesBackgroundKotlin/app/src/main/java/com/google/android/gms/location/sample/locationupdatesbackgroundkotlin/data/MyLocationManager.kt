@@ -59,15 +59,16 @@ class MyLocationManager private constructor(private val context: Context) {
         // IMPORTANT NOTE: Apps running on "O" devices (regardless of targetSdkVersion) may
         // receive updates less frequently than this interval when the app is no longer in the
         // foreground.
-        interval = TimeUnit.SECONDS.toMillis(60)
+        interval = TimeUnit.SECONDS.toMillis(3) // original 60
 
         // Sets the fastest rate for active location updates. This interval is exact, and your
         // application will never receive updates faster than this value.
-        fastestInterval = TimeUnit.SECONDS.toMillis(30)
+        fastestInterval = TimeUnit.SECONDS.toMillis(1) //original 30
 
         // Sets the maximum time when batched location updates are delivered. Updates may be
         // delivered sooner than this interval.
-        maxWaitTime = TimeUnit.MINUTES.toMillis(2)
+        //maxWaitTime = TimeUnit.MINUTES.toMillis(2) //original
+        maxWaitTime = TimeUnit.SECONDS.toMillis(5)
 
         priority = LocationRequest.PRIORITY_HIGH_ACCURACY
     }
